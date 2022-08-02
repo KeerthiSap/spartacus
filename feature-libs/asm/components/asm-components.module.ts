@@ -28,12 +28,11 @@ import {
 } from '@spartacus/storefront';
 import { AsmBindCartDialogComponent } from './asm-bind-cart-dialog/asm-bind-cart-dialog.component';
 import { AsmBindCartComponent } from './asm-bind-cart/asm-bind-cart.component';
-import { AsmCustomer360Component } from './asm-customer-360/asm-customer-360.component';
 import { AsmCustomerOverviewComponent } from './asm-customer-360/asm-customer-overview/asm-customer-overview.component';
 import { AsmProductItemComponent } from './asm-customer-360/asm-customer-overview/asm-product-item/asm-product-item.component';
 import { AsmCustomerProfileComponent } from './asm-customer-360/asm-customer-profile/asm-customer-profile.component';
+import { AsmCustomer360ComponentModule } from './asm-customer-360/asm-customer-360.component.module';
 import { AsmMainUiComponent } from './asm-main-ui/asm-main-ui.component';
-import { PrototypeComponent } from './asm-main-ui/prototype/prototype.component';
 import { AsmSessionTimerComponent } from './asm-session-timer/asm-session-timer.component';
 import { FormatTimerPipe } from './asm-session-timer/format-timer.pipe';
 import { AsmToggleUiComponent } from './asm-toggle-ui/asm-toggle-ui.component';
@@ -65,6 +64,7 @@ import { DotSpinnerComponent } from './dot-spinner/dot-spinner.component';
     MediaModule,
     RouterModule,
     UrlModule,
+    AsmCustomer360ComponentModule,
   ],
   declarations: [
     AsmBindCartDialogComponent,
@@ -76,13 +76,11 @@ import { DotSpinnerComponent } from './dot-spinner/dot-spinner.component';
     FormatTimerPipe,
     CustomerEmulationComponent,
     AsmToggleUiComponent,
-    AsmCustomer360Component,
     AsmBindCartComponent,
     DotSpinnerComponent,
     AsmCustomerProfileComponent,
     AsmCustomerOverviewComponent,
     AsmProductItemComponent
-    PrototypeComponent,
   ],
   exports: [
     AsmBindCartDialogComponent,
@@ -95,8 +93,8 @@ import { DotSpinnerComponent } from './dot-spinner/dot-spinner.component';
     CustomerEmulationComponent,
     AsmToggleUiComponent,
     AsmBindCartComponent,
+    AsmCustomer360ComponentModule,
     DotSpinnerComponent,
-    PrototypeComponent,
   ],
   providers: [
     provideDefaultConfig(defaultAsmLayoutConfig),
