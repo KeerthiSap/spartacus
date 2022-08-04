@@ -23,6 +23,7 @@ import {
   MediaModule,
   NgSelectA11yModule,
   PasswordVisibilityToggleModule,
+  PopoverModule,
   SortingModule,
   SpinnerModule
 } from '@spartacus/storefront';
@@ -52,6 +53,7 @@ import { DotSpinnerComponent } from './dot-spinner/dot-spinner.component';
     I18nModule,
     FormErrorsModule,
     IconModule,
+    PopoverModule,
     NgSelectModule,
     FormsModule,
     SpinnerModule,
