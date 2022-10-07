@@ -7,6 +7,8 @@
 import { Injectable } from '@angular/core';
 import { Config, User } from '@spartacus/core';
 import { ICON_TYPE } from '@spartacus/storefront';
+
+import { AsmCustomer360TabsConfig } from '../model/customer-360-tabs-config';
 import { CustomerListColumnActionType } from '../model/customer-list.model';
 @Injectable({
   providedIn: 'root',
@@ -45,25 +47,7 @@ export abstract class AsmConfig {
        */
       enable?: boolean;
     };
-    customer360?: {
-      activityTab?: {
-        pageSize?: number;
-      };
-      feedbackTab?: {
-        supportTickets?: {
-          pageSize?: number;
-        };
-        productReviews?: {
-          pageSize?: number;
-        };
-      };
-      mapsTab?: {
-        googleMaps?: {
-          apiKey?: string;
-        };
-        pageSize?: number;
-      };
-    };
+    customer360?: AsmCustomer360TabsConfig;
   };
 }
 
