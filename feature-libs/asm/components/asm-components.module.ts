@@ -29,6 +29,10 @@ import {
 } from '@spartacus/storefront';
 import { AsmBindCartDialogComponent } from './asm-bind-cart-dialog/asm-bind-cart-dialog.component';
 import { AsmBindCartComponent } from './asm-bind-cart/asm-bind-cart.component';
+import {
+  AsmCustomerOverviewComponent,
+  AsmCustomerProfileComponent,
+} from './asm-customer-360';
 import { AsmCustomer360ComponentModule } from './asm-customer-360/asm-customer-360.component.module';
 import { defaultCustomer360LayoutConfig } from './asm-customer-360/default-customer-360-layout.config';
 import { AsmMainUiComponent } from './asm-main-ui/asm-main-ui.component';
@@ -98,6 +102,16 @@ import { DotSpinnerComponent } from './dot-spinner/dot-spinner.component';
     provideDefaultConfig(defaultBindCartLayoutConfig),
     provideDefaultConfig(defaultCustomerListLayoutConfig),
     provideDefaultConfig(defaultCustomer360LayoutConfig),
+    provideDefaultConfig({
+      cmsComponents: {
+        AsmCustomer360OverviewComponent: {
+          component: AsmCustomerOverviewComponent,
+        },
+        AsmCustomer360ProfileComponent: {
+          component: AsmCustomerProfileComponent,
+        },
+      },
+    }),
   ],
 })
 export class AsmComponentsModule {}
