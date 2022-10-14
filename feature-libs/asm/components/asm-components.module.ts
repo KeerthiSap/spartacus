@@ -13,7 +13,7 @@ import {
   FeaturesConfigModule,
   I18nModule,
   provideDefaultConfig,
-  UrlModule
+  UrlModule,
 } from '@spartacus/core';
 import {
   CardModule,
@@ -25,11 +25,12 @@ import {
   PasswordVisibilityToggleModule,
   PopoverModule,
   SortingModule,
-  SpinnerModule
+  SpinnerModule,
 } from '@spartacus/storefront';
 import { AsmBindCartDialogComponent } from './asm-bind-cart-dialog/asm-bind-cart-dialog.component';
 import { AsmBindCartComponent } from './asm-bind-cart/asm-bind-cart.component';
 import { AsmCustomer360ComponentModule } from './asm-customer-360/asm-customer-360.component.module';
+import { defaultCustomer360LayoutConfig } from './asm-customer-360/default-customer-360-layout.config';
 import { AsmMainUiComponent } from './asm-main-ui/asm-main-ui.component';
 import { AsmSessionTimerComponent } from './asm-session-timer/asm-session-timer.component';
 import { FormatTimerPipe } from './asm-session-timer/format-timer.pipe';
@@ -96,6 +97,7 @@ import { DotSpinnerComponent } from './dot-spinner/dot-spinner.component';
     provideDefaultConfig(defaultAsmLayoutConfig),
     provideDefaultConfig(defaultBindCartLayoutConfig),
     provideDefaultConfig(defaultCustomerListLayoutConfig),
+    provideDefaultConfig(defaultCustomer360LayoutConfig),
   ],
 })
 export class AsmComponentsModule {}
