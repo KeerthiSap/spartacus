@@ -5,9 +5,6 @@
  */
 
 import {
-  AsmCustomer360Params,
-  AsmCustomer360Query,
-  AsmCustomer360Response,
   BindCartParams,
   CustomerListsPage,
   CustomerSearchOptions,
@@ -35,11 +32,6 @@ export abstract class AsmAdapter {
 
   /**
    * Fetches data needed for certain ASM components.
-   * @param queries that contain information on the specific UI component.
-   * @param options with the emulated user's ID.
    */
-  abstract getCustomer360Data(
-    queries: Array<AsmCustomer360Query>,
-    options: AsmCustomer360Params
-  ): Observable<AsmCustomer360Response>;
+  abstract getCustomer360Data(request: unknown): Observable<unknown>;
 }

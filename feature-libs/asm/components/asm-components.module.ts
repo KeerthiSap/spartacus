@@ -30,7 +30,9 @@ import {
 import { AsmBindCartDialogComponent } from './asm-bind-cart-dialog/asm-bind-cart-dialog.component';
 import { AsmBindCartComponent } from './asm-bind-cart/asm-bind-cart.component';
 import {
+  AsmCustomerMapComponent,
   AsmCustomerOverviewComponent,
+  AsmCustomerProductReviewsComponent,
   AsmCustomerProfileComponent,
 } from './asm-customer-360';
 import { AsmCustomer360ComponentModule } from './asm-customer-360/asm-customer-360.component.module';
@@ -109,6 +111,12 @@ import { DotSpinnerComponent } from './dot-spinner/dot-spinner.component';
         },
         AsmCustomer360ProfileComponent: {
           component: AsmCustomerProfileComponent,
+        },
+        AsmCustomer360ProductReviewsComponent: {
+          component: AsmCustomerProductReviewsComponent,
+        },
+        AsmCustomer360MapComponent: {
+          component: AsmCustomerMapComponent,
         },
       },
     }),

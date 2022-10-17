@@ -13,8 +13,6 @@ import {
 } from '@spartacus/asm/core';
 import {
   AsmConfig,
-  AsmCustomer360Response,
-  AsmCustomer360Type,
   BindCartParams,
   CustomerListsPage,
   CustomerSearchOptions,
@@ -32,6 +30,10 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { of } from 'rxjs';
+import {
+  OccAsmCustomer360Response,
+  OccAsmCustomer360Type,
+} from '../model/asm-360.model';
 
 @Injectable()
 export class OccAsmAdapter implements AsmAdapter {
@@ -152,7 +154,7 @@ export class OccAsmAdapter implements AsmAdapter {
       .pipe(catchError((error) => throwError(normalizeHttpError(error))));
   }
 
-  getCustomer360Data(/* queries: Array<AsmCustomer360Query>, { userId }: AsmCustomer360Params */): Observable<AsmCustomer360Response> {
+  getCustomer360Data(/* queries: Array<AsmCustomer360Query>, { userId }: AsmCustomer360Params */): Observable<OccAsmCustomer360Response> {
     /*
     const headers = InterceptorUtil.createHeader(
       USE_CUSTOMER_SUPPORT_AGENT_TOKEN,
@@ -181,10 +183,10 @@ export class OccAsmAdapter implements AsmAdapter {
 
     // return this.http.post<AsmCustomer360Response>(url, requestBody, { headers });
 
-    const response: AsmCustomer360Response = {
+    const response: OccAsmCustomer360Response = {
       value: [
         {
-          type: AsmCustomer360Type.REVIEW_LIST,
+          type: OccAsmCustomer360Type.REVIEW_LIST,
           reviews: [
             {
               productName: 'DC Car Battery Adapter',
@@ -261,7 +263,7 @@ export class OccAsmAdapter implements AsmAdapter {
           ],
         },
         {
-          type: AsmCustomer360Type.STORE_LOCATION,
+          type: OccAsmCustomer360Type.STORE_LOCATION,
           address: 'New York United States 10001',
         },
       ],

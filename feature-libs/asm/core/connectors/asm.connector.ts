@@ -6,9 +6,6 @@
 
 import { Injectable } from '@angular/core';
 import {
-  AsmCustomer360Params,
-  AsmCustomer360Query,
-  AsmCustomer360Response,
   BindCartParams,
   CustomerListsPage,
   CustomerSearchOptions,
@@ -38,10 +35,7 @@ export class AsmConnector {
     return this.asmAdapter.bindCart(options);
   }
 
-  getCustomer360Data(
-    queries: Array<AsmCustomer360Query>,
-    options: AsmCustomer360Params
-  ): Observable<AsmCustomer360Response> {
-    return this.asmAdapter.getCustomer360Data(queries, options);
+  getCustomer360Data(request: unknown): Observable<unknown> {
+    return this.asmAdapter.getCustomer360Data(request);
   }
 }
