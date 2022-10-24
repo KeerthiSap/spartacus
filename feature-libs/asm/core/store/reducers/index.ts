@@ -11,7 +11,10 @@ import {
   ActionReducerMap,
   MetaReducer,
 } from '@ngrx/store';
-import { CustomerSearchPage } from '@spartacus/asm/root';
+import {
+  AsmCustomer360Response,
+  CustomerSearchPage,
+} from '@spartacus/asm/root';
 import { StateUtils } from '@spartacus/core';
 import { AsmActions } from '../actions';
 import {
@@ -30,7 +33,8 @@ export function getReducers(): ActionReducerMap<AsmState> {
       StateUtils.loaderReducer<CustomerSearchPage>(
         CUSTOMER_LIST_CUSTOMERS_SEARCH_DATA
       ),
-    customer360Response: StateUtils.loaderReducer<unknown>(CUSTOMER_360_DATA),
+    customer360Response:
+      StateUtils.loaderReducer<AsmCustomer360Response>(CUSTOMER_360_DATA),
     asmUi: fromAsmUiReducer.reducer,
   };
 }

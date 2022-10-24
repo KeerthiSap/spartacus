@@ -5,10 +5,12 @@
  */
 
 import {
+  AsmCustomer360Request,
+  AsmCustomer360Response,
   BindCartParams,
   CustomerListsPage,
   CustomerSearchOptions,
-  CustomerSearchPage,
+  CustomerSearchPage
 } from '@spartacus/asm/root';
 import { Observable } from 'rxjs';
 
@@ -33,5 +35,7 @@ export abstract class AsmAdapter {
   /**
    * Fetches data needed for certain ASM components.
    */
-  abstract getCustomer360Data(request: unknown): Observable<unknown>;
+  abstract getCustomer360Data(
+    request: AsmCustomer360Request
+  ): Observable<AsmCustomer360Response>;
 }
