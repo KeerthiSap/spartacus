@@ -7,20 +7,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import {
   FeaturesConfigModule,
   I18nModule,
   provideDefaultConfig,
-  UrlModule,
 } from '@spartacus/core';
 import {
-  CardModule,
   FormErrorsModule,
   IconModule,
   KeyboardFocusModule,
-  MediaModule,
   NgSelectA11yModule,
   PasswordVisibilityToggleModule,
   PopoverModule,
@@ -29,13 +25,6 @@ import {
 } from '@spartacus/storefront';
 import { AsmBindCartDialogComponent } from './asm-bind-cart-dialog/asm-bind-cart-dialog.component';
 import { AsmBindCartComponent } from './asm-bind-cart/asm-bind-cart.component';
-import {
-  AsmCustomerActivityComponent,
-  AsmCustomerMapComponent,
-  AsmCustomerOverviewComponent,
-  AsmCustomerProductReviewsComponent,
-  AsmCustomerProfileComponent,
-} from './asm-customer-360';
 import { AsmCustomer360ComponentModule } from './asm-customer-360/asm-customer-360.component.module';
 import { defaultCustomer360LayoutConfig } from './asm-customer-360/default-customer-360-layout.config';
 import { AsmMainUiComponent } from './asm-main-ui/asm-main-ui.component';
@@ -67,10 +56,6 @@ import { DotSpinnerComponent } from './dot-spinner/dot-spinner.component';
     NgSelectA11yModule,
     SortingModule,
     FeaturesConfigModule,
-    CardModule,
-    MediaModule,
-    RouterModule,
-    UrlModule,
     AsmCustomer360ComponentModule,
   ],
   declarations: [
@@ -97,7 +82,6 @@ import { DotSpinnerComponent } from './dot-spinner/dot-spinner.component';
     CustomerEmulationComponent,
     AsmToggleUiComponent,
     AsmBindCartComponent,
-    AsmCustomer360ComponentModule,
     DotSpinnerComponent,
   ],
   providers: [
