@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { Store, StoreModule } from '@ngrx/store';
 import {
+  AsmCustomer360Response,
   AsmUi,
   CustomerSearchOptions,
   CustomerSearchPage,
@@ -103,5 +104,35 @@ describe('AsmService', () => {
       .subscribe((value) => (result = value))
       .unsubscribe();
     expect(result).toEqual(asmUi);
+  });
+
+  it('should dispatch an action to fetch customer 360 data', () => {
+    spyOn(store, 'dispatch').and.stub();
+
+    service.fetchCustomer360Data({
+      queries: [],
+    });
+
+    expect(store.dispatch).toHaveBeenCalledWith(
+      new AsmActions.Customer360Get({
+        queries: [],
+      })
+    );
+  });
+
+  it('should return customer 360 data', (done) => {
+    const customer360Response: AsmCustomer360Response = {
+      value: [],
+    };
+
+    store.dispatch(new AsmActions.Customer360GetSuccess(customer360Response));
+
+    service
+      .getCustomer360Data()
+      .pipe(take(1))
+      .subscribe((value) => {
+        expect(value).toEqual(customer360Response);
+        done();
+      });
   });
 });

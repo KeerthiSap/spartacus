@@ -149,4 +149,29 @@ describe('AsmCustomerListService', () => {
       new AsmActions.CustomerListCustomersSearchReset()
     );
   });
+
+  it('should return customer list customers search result', () => {
+    store.dispatch(
+      new AsmActions.CustomerListCustomersSearchSuccess(mockCustomerSearchPage)
+    );
+    let result: CustomerSearchPage;
+
+    service
+      .getCustomerListCustomersSearchResults()
+      .subscribe((value) => (result = value))
+      .unsubscribe();
+
+    expect(result).toEqual(mockCustomerSearchPage);
+  });
+
+  it('should return customer list customers search result loading status', () => {
+    let result: boolean;
+
+    service
+      .getCustomerListCustomersSearchResultsLoading()
+      .subscribe((value) => (result = value))
+      .unsubscribe();
+
+    expect(result).toEqual(false);
+  });
 });
