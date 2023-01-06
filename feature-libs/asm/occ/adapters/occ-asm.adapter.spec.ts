@@ -338,4 +338,6 @@ describe('OccAsmAdapter', () => {
 
     mockReq.flush(null);
   });
+
+  xit('should get customer 360 data', () => {});
 });
