@@ -10,6 +10,9 @@ import {
 } from '@spartacus/asm/core';
 import {
   AsmConfig,
+  AsmCustomer360Request,
+  AsmCustomer360Response,
+  AsmCustomer360Type,
   CustomerListsPage,
   CustomerSearchOptions,
   CustomerSearchPage,
@@ -339,5 +342,40 @@ describe('OccAsmAdapter', () => {
     mockReq.flush(null);
   });
 
-  xit('should get customer 360 data', () => {});
+  it('should get customer 360 data', (done) => {
+    const request: AsmCustomer360Request = {
+      queries: [
+        {
+          type: AsmCustomer360Type.REVIEW_LIST,
+        },
+      ],
+      options: {
+        userId: 'user001',
+      },
+    };
+
+    const response: AsmCustomer360Response = {
+      value: [
+        {
+          type: AsmCustomer360Type.REVIEW_LIST,
+          reviews: [],
+        },
+      ],
+    };
+
+    occAsmAdapter.getCustomer360Data(request).subscribe((backendResponse) => {
+      expect(backendResponse).toBe(response);
+      done();
+    });
+
+    const mockReq = httpMock.expectOne((req) => {
+      return (
+        req.url === 'asmCustomer360' &&
+        req.method === 'POST' &&
+        req.body.customer360Queries === request.queries
+      );
+    });
+
+    mockReq.flush(response);
+  });
 });

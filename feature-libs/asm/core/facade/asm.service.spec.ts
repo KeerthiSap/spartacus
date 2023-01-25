@@ -111,11 +111,17 @@ describe('AsmService', () => {
 
     service.fetchCustomer360Data({
       queries: [],
+      options: {
+        userId: '',
+      },
     });
 
     expect(store.dispatch).toHaveBeenCalledWith(
       new AsmActions.Customer360Get({
         queries: [],
+        options: {
+          userId: '',
+        },
       })
     );
   });
