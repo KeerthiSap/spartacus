@@ -4,15 +4,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {
-  AsmCustomer360Request,
-  AsmCustomer360Response,
-  CustomerSearchOptions,
-  CustomerSearchPage,
-} from '@spartacus/asm/root';
+import { CustomerSearchOptions, CustomerSearchPage } from '@spartacus/asm/root';
 import { StateUtils } from '@spartacus/core';
 import {
-  CUSTOMER_360_DATA,
   CUSTOMER_LIST_CUSTOMERS_SEARCH_DATA,
   CUSTOMER_SEARCH_DATA,
 } from '../asm-state';
@@ -30,11 +24,6 @@ export const CUSTOMER_LIST_CUSTOMERS_SEARCH_SUCCESS =
   '[Asm] Customer List Customers Search Success';
 export const CUSTOMER_LIST_CUSTOMERS_SEARCH_RESET =
   '[Asm] Customer List Customers Search Reset';
-
-export const CUSTOMER_360_GET = '[Asm] Customer 360 Data Get';
-export const CUSTOMER_360_GET_FAIL = '[Asm] Customer 360 Data Get Fail';
-export const CUSTOMER_360_GET_SUCCESS = '[Asm] Customer 360 Data Get Success';
-export const CUSTOMER_360_GET_RESET = '[Asm] Customer 360 Data Get Reset';
 
 export class CustomerSearch extends StateUtils.LoaderLoadAction {
   readonly type = CUSTOMER_SEARCH;
@@ -92,34 +81,6 @@ export class CustomerListCustomersSearchReset extends StateUtils.LoaderResetActi
   }
 }
 
-export class Customer360Get extends StateUtils.LoaderLoadAction {
-  readonly type = CUSTOMER_360_GET;
-  constructor(public payload: AsmCustomer360Request) {
-    super(CUSTOMER_360_DATA);
-  }
-}
-
-export class Customer360GetFail extends StateUtils.LoaderFailAction {
-  readonly type = CUSTOMER_360_GET_FAIL;
-  constructor(public payload: any) {
-    super(CUSTOMER_360_DATA);
-  }
-}
-
-export class Customer360GetSuccess extends StateUtils.LoaderSuccessAction {
-  readonly type = CUSTOMER_360_GET_SUCCESS;
-  constructor(public payload: AsmCustomer360Response) {
-    super(CUSTOMER_360_DATA);
-  }
-}
-
-export class Customer360GetReset extends StateUtils.LoaderResetAction {
-  readonly type = CUSTOMER_360_GET_RESET;
-  constructor() {
-    super(CUSTOMER_360_DATA);
-  }
-}
-
 // action types
 export type CustomerAction =
   | CustomerSearch
@@ -129,8 +90,4 @@ export type CustomerAction =
   | CustomerListCustomersSearch
   | CustomerListCustomersSearchFail
   | CustomerListCustomersSearchSuccess
-  | CustomerListCustomersSearchReset
-  | Customer360Get
-  | Customer360GetFail
-  | Customer360GetSuccess
-  | Customer360GetReset;
+  | CustomerListCustomersSearchReset;
