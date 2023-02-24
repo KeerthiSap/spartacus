@@ -5,6 +5,7 @@
     "paths": {
       "@spartacus/setup": ["../../dist/setup"],
       "@spartacus/setup/ssr": ["../../dist/setup/ssr"],
+      "@spartacus/asm/asm-customer-360": ["../../dist/asm/asm-customer-360"],
       "@spartacus/asm/assets": ["../../dist/asm/assets"],
       "@spartacus/asm/components": ["../../dist/asm/components"],
       "@spartacus/asm/core": ["../../dist/asm/core"],
