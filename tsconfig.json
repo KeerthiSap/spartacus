@@ -51,8 +51,20 @@
       "@spartacus/asm/root": [
         "feature-libs/asm/root/public_api"
       ],
-      "@spartacus/asm/asm-customer-360": [
-        "feature-libs/asm/asm-customer-360/public_api"
+      "@spartacus/asm/customer-360": [
+        "feature-libs/asm/customer-360/public_api"
+      ],
+      "@spartacus/asm/customer-360/components": [
+        "feature-libs/asm/customer-360/components/public_api"
+      ],
+      "@spartacus/asm/customer-360/core": [
+        "feature-libs/asm/customer-360/core/public_api"
+      ],
+      "@spartacus/asm/customer-360/occ": [
+        "feature-libs/asm/customer-360/occ/public_api"
+      ],
+      "@spartacus/asm/customer-360/root": [
+        "feature-libs/asm/customer-360/root/public_api"
       ],
       "@spartacus/cart/base/assets": [
         "feature-libs/cart/base/assets/public_api"
@@ -576,15 +588,8 @@
     },
     "useDefineForClassFields": false
   },
-<<<<<<< HEAD
   "exclude": [
     "./dist",
     "./projects/storefrontapp-e2e-cypress"
   ]
-=======
-  "exclude": [
-    "./dist",
-    "./projects/storefrontapp-e2e-cypress"
-  ]
->>>>>>> 8b8bcf2713 (Task/asm 360 lazy load (#16895))
 }

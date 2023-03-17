@@ -17,8 +17,8 @@
       "esnext"
     ],
     "paths": {
-      "@spartacus/asm/asm-customer-360": [
-        "dist/asm/asm-customer-360"
+      "@spartacus/asm/customer-360": [
+        "dist/asm/customer-360"
       ],
       "@spartacus/asm/assets": [
         "dist/asm/assets"

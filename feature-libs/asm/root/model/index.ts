@@ -8,9 +8,3 @@ export * from './asm.models';
 export * from './augmented-core.model';
 export * from './cart-binding.models';
 export * from './customer-list.model';
-
-export * from './customer-360.model';
-export * from './customer-360-section-config';
-export * from './customer-360-section-data';
-export * from './customer-360-tab-config';
-export * from './customer-360-tabs-config';
