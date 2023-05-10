@@ -4,16 +4,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { CART_BASE_FEATURE } from '@spartacus/cart/base/root';
 import {
   CHECKOUT_BASE_FEATURE_NAME,
   OPF_FEATURE_NAME,
+  ORDER_FEATURE_NAME,
   SPARTACUS_OPF,
   SPARTACUS_OPF_ASSETS,
   SPARTACUS_OPF_ROOT,
 } from '../../libs-constants';
 import { AdditionalFeatureConfiguration } from '../../utils/feature-utils';
 import { LibraryOptions, SchematicConfig } from '../../utils/lib-utils';
-import { CHECKOUT_BASE_MODULE } from '../checkout-schematics-config';
 
 export interface SpartacusOpfOptions extends LibraryOptions {
   baseUrl?: string;
@@ -47,6 +48,10 @@ export const OPF_SCHEMATICS_CONFIG: SchematicConfig = {
     name: OPF_ROOT_MODULE,
     importPath: SPARTACUS_OPF_ROOT,
   },
+  lazyLoadingChunk: {
+    moduleSpecifier: SPARTACUS_OPF_ROOT,
+    namedImports: [OPF_FEATURE_NAME_CONSTANT],
+  },
   i18n: {
     resources: OPF_TRANSLATIONS,
     chunks: OPF_TRANSLATION_CHUNKS_CONFIG,
@@ -56,12 +61,10 @@ export const OPF_SCHEMATICS_CONFIG: SchematicConfig = {
     scssFileName: OPF_SCSS_FILE_NAME,
     importStyle: SPARTACUS_OPF,
   },
-  dependencyFeatures: [CHECKOUT_BASE_FEATURE_NAME],
-  importAfter: [
-    {
-      markerModuleName: CHECKOUT_BASE_MODULE,
-      featureModuleName: OPF_MODULE,
-    },
+  dependencyFeatures: [
+    CHECKOUT_BASE_FEATURE_NAME,
+    ORDER_FEATURE_NAME,
+    CART_BASE_FEATURE,
   ],
   customConfig: buildOpfConfig,
 };
